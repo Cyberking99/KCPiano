@@ -1,0 +1,123 @@
+* {
+	border:0px;
+	margin: 0px;
+}
+
+html, body {
+	height: 100vh;
+}
+
+.keyboard {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(10, 10, 10);
+}
+
+.key-box {
+  position: relative;
+  height: 90%;
+  width: 100%;
+}
+
+.key {
+  position: absolute;
+  width: 98%;
+  height: 100%;
+  color: rgb(41, 41, 41);
+  background-color: rgb(250, 243, 241);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 10px 0 rgb(218, 211, 209);
+}
+
+.key-box button {
+	color: rgb(41, 41, 41);
+}
+
+.key:hover {
+  cursor: pointer;
+  top: 2px;
+}
+
+.key:active {
+  top: 6px;
+}
+
+.keyboard-sus {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.keySB {
+  position: absolute;
+  width: 7vw;
+  height: 60vh;
+  background-color: rgb(41, 41, 41);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 10px 0 rgb(19, 19, 19);
+}
+
+.keySB:hover {
+  cursor: pointer;
+  top: 2px;
+}
+
+.keySB:active {
+  top: 6px;
+}
+
+#doSB {
+  left: 125px;
+}
+
+#reSB {
+  left: 460px;
+}
+
+#miSB {
+  left: 635px;
+}
+
+#faSB {
+  left: 975px;
+}
+
+#solSB {
+  left: 1150px;
+}
+
+#notes {
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(10, 10, 10);
+}
+
+#notes button {
+  flex: 1;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 600px) {
+  #notes {
+    flex-direction: row;
+  }
+ .keyboard-sus{
+ 	flex-direction: row;
+ }
+}

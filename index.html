@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intitial-scale=1.0">
+	<title>KC Piano</title>
+	<link rel="stylesheet" href="assets/css/piano.css">
+</head>
+<body>
+	<div class="keyboard">
+		<div id="notes">
+			<div class="key-box">
+				<button data-key="a" class="key" style="color: rgb(41, 41, 41);">A</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="s" class="key" style="color: rgb(41, 41, 41);">S</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="d" class="key" style="color: rgb(41, 41, 41);">D</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="f" class="key" style="color: rgb(41, 41, 41);">F</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="g" class="key" style="color: rgb(41, 41, 41);">G</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="h" class="key" style="color: rgb(41, 41, 41);">H</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="j" class="key" style="color: rgb(41, 41, 41);">J</button>
+			</div>
+
+			<div class="key-box">
+				<button data-key="k" class="key" style="color: rgb(41, 41, 41);">K</button>
+			</div>
+
+			<div class="keyboard-sus">
+				<div class="key-box">
+					<button id="doSB" data-key="w" class="keySB">W</button>
+				</div>
+
+				<div class="key-box">
+					<button id="reSB" data-key="r" class="keySB">R</button>
+				</div>
+
+				<div class="key-box">
+					<button id="miSB" data-key="t" class="keySB">T</button>
+				</div>
+
+				<div class="key-box">
+					<button id="faSB" data-key="u" class="keySB">U</button>
+				</div>
+
+				<div class="key-box">
+					<button id="solSB" data-key="i" class="keySB">I</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="audios">
+		<audio data-key="a" src="assets/notes/a.wav">A</audio>
+		<audio data-key="s" src="assets/notes/s.wav">S</audio>
+		<audio data-key="d" src="assets/notes/d.wav">D</audio>
+		<audio data-key="f" src="assets/notes/f.wav">F</audio>
+		<audio data-key="g" src="assets/notes/g.wav">G</audio>
+		<audio data-key="h" src="assets/notes/h.wav">H</audio>
+		<audio data-key="j" src="assets/notes/j.wav">J</audio>
+		<audio data-key="k" src="assets/notes/k.wav">K</audio>
+
+		<!-- Flat Keys -->
+		<audio data-key="w" src="assets/notes/w.wav">W</audio>
+		<audio data-key="r" src="assets/notes/r.wav">R</audio>
+		<audio data-key="t" src="assets/notes/t.wav">T</audio>
+		<audio data-key="u" src="assets/notes/u.wav">U</audio>
+		<audio data-key="i" src="assets/notes/i.wav">I</audio>
+	</div>
+
+	<script type="text/javascript">
+		const UInotes = document.querySelector('#notes')
+
+		window.addEventListener('keydown', (e) => {
+		  playNotes(e.key)
+		})
+
+		UInotes.addEventListener('click', (e) => {
+		  if (e.target.parentElement.id === 'notes') {
+		    playNotes(e.target.dataset.key)
+		  }
+		})
+
+		function playNotes(key) {
+		  const notes = document.querySelector(`audio[data-key="${key.toLowerCase()}"]`)
+		  if (!notes) return
+
+		  notes.currentTime = 0
+		  notes.play()
+		}
+	</script>
+</body>
+</html>
